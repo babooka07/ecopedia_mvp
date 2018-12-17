@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="InfoMapView" customModule="Ecopedia_MVP" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXc-3y-NR9" userLabel="Info Board">
+                    <rect key="frame" x="37.5" y="201" width="300" height="285"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ptq-lu-FdC">
+                            <rect key="frame" x="8.5" y="14" width="283" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="283" id="0EM-UY-LaO"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cR-Dv-Qbv">
+                            <rect key="frame" x="7" y="46" width="286" height="164"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="286" id="gLa-Wb-fyO"/>
+                                <constraint firstAttribute="height" constant="164" id="t7y-or-Afp"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVv-gK-x87">
+                            <rect key="frame" x="176" y="238" width="105" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="2Fc-bh-DS4"/>
+                                <constraint firstAttribute="width" constant="105" id="VZx-pe-ql0"/>
+                            </constraints>
+                            <state key="normal" title="Show Direction"/>
+                            <connections>
+                                <action selector="showDirectionBtnDidTap" destination="iN0-l3-epB" eventType="touchUpInside" id="GSV-dI-xm0"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5b-yb-gcC">
+                            <rect key="frame" x="29" y="238" width="105" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="105" id="7zT-S3-fbn"/>
+                                <constraint firstAttribute="height" constant="30" id="Bkw-e9-Mlo"/>
+                            </constraints>
+                            <state key="normal" title="Cancel">
+                                <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="cancelBtnDidTap" destination="iN0-l3-epB" eventType="touchUpInside" id="xdD-kp-1RT"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Ptq-lu-FdC" firstAttribute="top" secondItem="XXc-3y-NR9" secondAttribute="top" constant="14" id="0bI-89-AYN"/>
+                        <constraint firstAttribute="bottom" secondItem="r5b-yb-gcC" secondAttribute="bottom" constant="17" id="46s-zY-FWT"/>
+                        <constraint firstAttribute="trailing" secondItem="KVv-gK-x87" secondAttribute="trailing" constant="19" id="5E4-UO-l4x"/>
+                        <constraint firstItem="Ptq-lu-FdC" firstAttribute="centerX" secondItem="XXc-3y-NR9" secondAttribute="centerX" id="6G0-G2-yLT"/>
+                        <constraint firstItem="7cR-Dv-Qbv" firstAttribute="centerX" secondItem="XXc-3y-NR9" secondAttribute="centerX" id="Mp0-5D-Hxu"/>
+                        <constraint firstItem="7cR-Dv-Qbv" firstAttribute="top" secondItem="Ptq-lu-FdC" secondAttribute="bottom" constant="8" id="TDt-30-n9g"/>
+                        <constraint firstItem="r5b-yb-gcC" firstAttribute="leading" secondItem="XXc-3y-NR9" secondAttribute="leading" constant="29" id="i4V-Kn-fhE"/>
+                        <constraint firstAttribute="height" constant="285" id="kJN-Kb-UML"/>
+                        <constraint firstAttribute="bottom" secondItem="KVv-gK-x87" secondAttribute="bottom" constant="17" id="rpP-6A-Gga"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.72123822773972601" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="XXc-3y-NR9" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.8" id="N0h-gd-A2j"/>
+                <constraint firstItem="XXc-3y-NR9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="SFf-eo-Y9T"/>
+                <constraint firstItem="XXc-3y-NR9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="10" id="eKx-RA-Fcf"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="7cR-Dv-Qbv" id="2pq-ht-UOq"/>
+                <outlet property="nameLabel" destination="Ptq-lu-FdC" id="yug-rq-BI9"/>
+            </connections>
+            <point key="canvasLocation" x="40.799999999999997" y="46.326836581709152"/>
+        </view>
+    </objects>
+</document>

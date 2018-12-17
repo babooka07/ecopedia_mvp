@@ -1,0 +1,21 @@
+
+/* Class = "UIButton"; normalTitle = "QR"; ObjectID = "5yp-yS-OUk"; */
+"5yp-yS-OUk.normalTitle" = "QR";
+
+/* Class = "UIButton"; normalTitle = "POI"; ObjectID = "BjK-xc-CQR"; */
+"BjK-xc-CQR.normalTitle" = "POI";
+
+/* Class = "UIButton"; normalTitle = "Main Menu"; ObjectID = "FGw-h3-kZU"; */
+"FGw-h3-kZU.normalTitle" = "Main Menu";
+
+/* Class = "UIButton"; normalTitle = "Simulate QR For Animal"; ObjectID = "IXQ-jB-12M"; */
+"IXQ-jB-12M.normalTitle" = "Simulate QR For Animal";
+
+/* Class = "UINavigationItem"; title = "Main Menu"; ObjectID = "PEy-eC-TB7"; */
+"PEy-eC-TB7.title" = "Main Menu";
+
+/* Class = "UIButton"; normalTitle = "Animals"; ObjectID = "PaA-LG-MJP"; */
+"PaA-LG-MJP.normalTitle" = "Animals";
+
+/* Class = "UIButton"; normalTitle = "Map"; ObjectID = "puS-Pn-d89"; */
+"puS-Pn-d89.normalTitle" = "Map";

@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F1170A1521BD569900650FEA /* EcoparkMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1170A1421BD569900650FEA /* EcoparkMapView.swift */; };
+		F1170A1821BD7B1300650FEA /* InfoMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1170A1721BD7B1300650FEA /* InfoMapView.xib */; };
+		F1170A1A21BD7B5200650FEA /* InfoMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1170A1921BD7B5200650FEA /* InfoMapView.swift */; };
+		F1170A1C21BD97CD00650FEA /* NavigationToPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1170A1B21BD97CD00650FEA /* NavigationToPointViewController.swift */; };
+		F12B467221C5C4D5009794B3 /* DescriptionForAnimals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12B467121C5C4D5009794B3 /* DescriptionForAnimals.swift */; };
+		F151933F21BB376400B186E8 /* AnimalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151933E21BB376400B186E8 /* AnimalListViewController.swift */; };
+		F151934121BB379400B186E8 /* PoiListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151934021BB379400B186E8 /* PoiListViewController.swift */; };
+		F151934321BB382100B186E8 /* QRReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151934221BB382100B186E8 /* QRReaderViewController.swift */; };
+		F15DF90F21BEE60200CB7534 /* AnimalSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DF90E21BEE60200CB7534 /* AnimalSlideViewController.swift */; };
+		F15DF91321BF102E00CB7534 /* anilmalListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DF91121BF102E00CB7534 /* anilmalListTableViewCell.swift */; };
+		F15DF91421BF102E00CB7534 /* anilmalListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F15DF91221BF102E00CB7534 /* anilmalListTableViewCell.xib */; };
+		F18A5F7921C1C9A000058C8B /* Lion.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F18A5F7721C1C9A000058C8B /* Lion.m4a */; };
+		F18A5F7A21C1C9A000058C8B /* Camel.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F18A5F7821C1C9A000058C8B /* Camel.m4a */; };
+		F19A942D21C06AD5006B202A /* PoiListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A942B21C06AD5006B202A /* PoiListTableViewCell.swift */; };
+		F19A942E21C06AD5006B202A /* PoiListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F19A942C21C06AD5006B202A /* PoiListTableViewCell.xib */; };
+		F1B6AEF521B411EE0057B453 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B6AEF421B411EE0057B453 /* AppDelegate.swift */; };
+		F1B6AEFA21B411EE0057B453 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B6AEF821B411EE0057B453 /* Main.storyboard */; };
+		F1B6AEFC21B411F30057B453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1B6AEFB21B411F30057B453 /* Assets.xcassets */; };
+		F1B6AEFF21B411F30057B453 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B6AEFD21B411F30057B453 /* LaunchScreen.storyboard */; };
+		F1E8D55721B886C3008B3A26 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E8D55621B886C3008B3A26 /* MapViewController.swift */; };
+		F1E8D55921B97B5B008B3A26 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E8D55821B97B5B008B3A26 /* Constants.swift */; };
+		F1E8D55B21B97BE2008B3A26 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E8D55A21B97BE2008B3A26 /* ItemModel.swift */; };
+		F1E8D55D21B99204008B3A26 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E8D55C21B99204008B3A26 /* MainMenuViewController.swift */; };
+		F1E8D56321B9EC23008B3A26 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E8D56221B9EC23008B3A26 /* DataBase.swift */; };
+		F1F60EDA21BC93B900A93E10 /* EcoparkMapViewXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F60ED921BC93B900A93E10 /* EcoparkMapViewXIB.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F1170A1421BD569900650FEA /* EcoparkMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoparkMapView.swift; sourceTree = "<group>"; };
+		F1170A1721BD7B1300650FEA /* InfoMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoMapView.xib; sourceTree = "<group>"; };
+		F1170A1921BD7B5200650FEA /* InfoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMapView.swift; sourceTree = "<group>"; };
+		F1170A1B21BD97CD00650FEA /* NavigationToPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationToPointViewController.swift; sourceTree = "<group>"; };
+		F12B467121C5C4D5009794B3 /* DescriptionForAnimals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionForAnimals.swift; sourceTree = "<group>"; };
+		F151933E21BB376400B186E8 /* AnimalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListViewController.swift; sourceTree = "<group>"; };
+		F151934021BB379400B186E8 /* PoiListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiListViewController.swift; sourceTree = "<group>"; };
+		F151934221BB382100B186E8 /* QRReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRReaderViewController.swift; sourceTree = "<group>"; };
+		F15DF90E21BEE60200CB7534 /* AnimalSlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSlideViewController.swift; sourceTree = "<group>"; };
+		F15DF91121BF102E00CB7534 /* anilmalListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = anilmalListTableViewCell.swift; sourceTree = "<group>"; };
+		F15DF91221BF102E00CB7534 /* anilmalListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = anilmalListTableViewCell.xib; sourceTree = "<group>"; };
+		F18A5F7721C1C9A000058C8B /* Lion.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lion.m4a; sourceTree = "<group>"; };
+		F18A5F7821C1C9A000058C8B /* Camel.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Camel.m4a; sourceTree = "<group>"; };
+		F19A942B21C06AD5006B202A /* PoiListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiListTableViewCell.swift; sourceTree = "<group>"; };
+		F19A942C21C06AD5006B202A /* PoiListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PoiListTableViewCell.xib; sourceTree = "<group>"; };
+		F1B6AEF121B411EE0057B453 /* Ecopedia_MVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecopedia_MVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1B6AEF421B411EE0057B453 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F1B6AEF921B411EE0057B453 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F1B6AEFB21B411F30057B453 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F1B6AEFE21B411F30057B453 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F1B6AF0021B411F30057B453 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1E8D55621B886C3008B3A26 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		F1E8D55821B97B5B008B3A26 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F1E8D55A21B97BE2008B3A26 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		F1E8D55C21B99204008B3A26 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		F1E8D56221B9EC23008B3A26 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
+		F1F60ED921BC93B900A93E10 /* EcoparkMapViewXIB.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EcoparkMapViewXIB.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F1B6AEEE21B411EE0057B453 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F1170A1621BD78B300650FEA /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				F1170A1421BD569900650FEA /* EcoparkMapView.swift */,
+				F1F60ED921BC93B900A93E10 /* EcoparkMapViewXIB.xib */,
+				F1170A1921BD7B5200650FEA /* InfoMapView.swift */,
+				F1170A1721BD7B1300650FEA /* InfoMapView.xib */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		F15DF91021BF0F5800CB7534 /* animal list */ = {
+			isa = PBXGroup;
+			children = (
+				F15DF91121BF102E00CB7534 /* anilmalListTableViewCell.swift */,
+				F15DF91221BF102E00CB7534 /* anilmalListTableViewCell.xib */,
+			);
+			path = "animal list";
+			sourceTree = "<group>";
+		};
+		F18A5F7621C1C96F00058C8B /* audio slides */ = {
+			isa = PBXGroup;
+			children = (
+				F18A5F7821C1C9A000058C8B /* Camel.m4a */,
+				F18A5F7721C1C9A000058C8B /* Lion.m4a */,
+			);
+			path = "audio slides";
+			sourceTree = "<group>";
+		};
+		F19A942721C0126F006B202A /*  service */ = {
+			isa = PBXGroup;
+			children = (
+				F1E8D55821B97B5B008B3A26 /* Constants.swift */,
+				F1E8D56221B9EC23008B3A26 /* DataBase.swift */,
+				F12B467121C5C4D5009794B3 /* DescriptionForAnimals.swift */,
+			);
+			path = " service";
+			sourceTree = "<group>";
+		};
+		F19A942A21C068EE006B202A /* POI list */ = {
+			isa = PBXGroup;
+			children = (
+				F19A942B21C06AD5006B202A /* PoiListTableViewCell.swift */,
+				F19A942C21C06AD5006B202A /* PoiListTableViewCell.xib */,
+			);
+			path = "POI list";
+			sourceTree = "<group>";
+		};
+		F1B6AEE821B411EE0057B453 = {
+			isa = PBXGroup;
+			children = (
+				F18A5F7621C1C96F00058C8B /* audio slides */,
+				F19A942A21C068EE006B202A /* POI list */,
+				F19A942721C0126F006B202A /*  service */,
+				F1E8D55F21B992DA008B3A26 /* Models */,
+				F15DF91021BF0F5800CB7534 /* animal list */,
+				F1170A1621BD78B300650FEA /* Map */,
+				F1E8D55E21B992C2008B3A26 /* ViewControllers */,
+				F1B6AEF321B411EE0057B453 /* Ecopedia_MVP */,
+				F1B6AEF221B411EE0057B453 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F1B6AEF221B411EE0057B453 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F1B6AEF121B411EE0057B453 /* Ecopedia_MVP.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F1B6AEF321B411EE0057B453 /* Ecopedia_MVP */ = {
+			isa = PBXGroup;
+			children = (
+				F1B6AEF421B411EE0057B453 /* AppDelegate.swift */,
+				F1B6AEF821B411EE0057B453 /* Main.storyboard */,
+				F1B6AEFB21B411F30057B453 /* Assets.xcassets */,
+				F1B6AEFD21B411F30057B453 /* LaunchScreen.storyboard */,
+				F1B6AF0021B411F30057B453 /* Info.plist */,
+			);
+			path = Ecopedia_MVP;
+			sourceTree = "<group>";
+		};
+		F1E8D55E21B992C2008B3A26 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F15DF90E21BEE60200CB7534 /* AnimalSlideViewController.swift */,
+				F1170A1B21BD97CD00650FEA /* NavigationToPointViewController.swift */,
+				F151933E21BB376400B186E8 /* AnimalListViewController.swift */,
+				F1E8D55621B886C3008B3A26 /* MapViewController.swift */,
+				F1E8D55C21B99204008B3A26 /* MainMenuViewController.swift */,
+				F151934021BB379400B186E8 /* PoiListViewController.swift */,
+				F151934221BB382100B186E8 /* QRReaderViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F1E8D55F21B992DA008B3A26 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1E8D55A21B97BE2008B3A26 /* ItemModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F1B6AEF021B411EE0057B453 /* Ecopedia_MVP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1B6AF0321B411F30057B453 /* Build configuration list for PBXNativeTarget "Ecopedia_MVP" */;
+			buildPhases = (
+				F1B6AEED21B411EE0057B453 /* Sources */,
+				F1B6AEEE21B411EE0057B453 /* Frameworks */,
+				F1B6AEEF21B411EE0057B453 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ecopedia_MVP;
+			productName = Ecopedia_MVP;
+			productReference = F1B6AEF121B411EE0057B453 /* Ecopedia_MVP.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F1B6AEE921B411EE0057B453 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Valeriy;
+				TargetAttributes = {
+					F1B6AEF021B411EE0057B453 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = F1B6AEEC21B411EE0057B453 /* Build configuration list for PBXProject "Ecopedia_MVP" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F1B6AEE821B411EE0057B453;
+			productRefGroup = F1B6AEF221B411EE0057B453 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F1B6AEF021B411EE0057B453 /* Ecopedia_MVP */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F1B6AEEF21B411EE0057B453 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1F60EDA21BC93B900A93E10 /* EcoparkMapViewXIB.xib in Resources */,
+				F1B6AEFF21B411F30057B453 /* LaunchScreen.storyboard in Resources */,
+				F18A5F7921C1C9A000058C8B /* Lion.m4a in Resources */,
+				F1B6AEFC21B411F30057B453 /* Assets.xcassets in Resources */,
+				F1170A1821BD7B1300650FEA /* InfoMapView.xib in Resources */,
+				F15DF91421BF102E00CB7534 /* anilmalListTableViewCell.xib in Resources */,
+				F19A942E21C06AD5006B202A /* PoiListTableViewCell.xib in Resources */,
+				F18A5F7A21C1C9A000058C8B /* Camel.m4a in Resources */,
+				F1B6AEFA21B411EE0057B453 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F1B6AEED21B411EE0057B453 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F15DF91321BF102E00CB7534 /* anilmalListTableViewCell.swift in Sources */,
+				F1E8D55721B886C3008B3A26 /* MapViewController.swift in Sources */,
+				F19A942D21C06AD5006B202A /* PoiListTableViewCell.swift in Sources */,
+				F151934121BB379400B186E8 /* PoiListViewController.swift in Sources */,
+				F1170A1521BD569900650FEA /* EcoparkMapView.swift in Sources */,
+				F151934321BB382100B186E8 /* QRReaderViewController.swift in Sources */,
+				F12B467221C5C4D5009794B3 /* DescriptionForAnimals.swift in Sources */,
+				F1E8D55D21B99204008B3A26 /* MainMenuViewController.swift in Sources */,
+				F1B6AEF521B411EE0057B453 /* AppDelegate.swift in Sources */,
+				F1E8D55B21B97BE2008B3A26 /* ItemModel.swift in Sources */,
+				F1E8D56321B9EC23008B3A26 /* DataBase.swift in Sources */,
+				F1170A1C21BD97CD00650FEA /* NavigationToPointViewController.swift in Sources */,
+				F1170A1A21BD7B5200650FEA /* InfoMapView.swift in Sources */,
+				F151933F21BB376400B186E8 /* AnimalListViewController.swift in Sources */,
+				F15DF90F21BEE60200CB7534 /* AnimalSlideViewController.swift in Sources */,
+				F1E8D55921B97B5B008B3A26 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F1B6AEF821B411EE0057B453 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1B6AEF921B411EE0057B453 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F1B6AEFD21B411F30057B453 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1B6AEFE21B411F30057B453 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F1B6AF0121B411F30057B453 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F1B6AF0221B411F30057B453 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F1B6AF0421B411F30057B453 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 54P7YR396K;
+				INFOPLIST_FILE = Ecopedia_MVP/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fgs.Hello-World.Ecopedia-MVP";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F1B6AF0521B411F30057B453 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 54P7YR396K;
+				INFOPLIST_FILE = Ecopedia_MVP/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fgs.Hello-World.Ecopedia-MVP";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F1B6AEEC21B411EE0057B453 /* Build configuration list for PBXProject "Ecopedia_MVP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1B6AF0121B411F30057B453 /* Debug */,
+				F1B6AF0221B411F30057B453 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1B6AF0321B411F30057B453 /* Build configuration list for PBXNativeTarget "Ecopedia_MVP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1B6AF0421B411F30057B453 /* Debug */,
+				F1B6AF0521B411F30057B453 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F1B6AEE921B411EE0057B453 /* Project object */;
+}
