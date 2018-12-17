@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import CoreLocation
 
 
+class NavigationToPointViewController: UIViewController, CLLocationManagerDelegate {
 
-class NavigationToPointViewController: UIViewController {
-
-    //NavigationToPointViewControllerIdentifier
+    
     @IBOutlet weak var navigationArrowView: UIImageView!
     
     var currentItemModel = ItemModel()
+    
+    var locationManager = CLLocationManager()
     
     @IBOutlet weak var testLabel: UILabel!
     override func viewDidLoad() {
@@ -27,6 +29,17 @@ class NavigationToPointViewController: UIViewController {
         super.viewWillAppear(animated)
         testLabel.text = currentItemModel.name
         
+        locationManager.delegate = self
+        locationManager.startUpdatingHeading()
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        
+        let degrees = 360 - newHeading.magneticHeading
+        let radians = CGFloat(degrees * Double.pi / 180)
+        
+        navigationArrowView.transform = CGAffineTransform(rotationAngle: radians)
     }
     
     
@@ -34,14 +47,4 @@ class NavigationToPointViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
