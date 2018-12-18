@@ -29,7 +29,7 @@ class ItemModel {
     var tag: Int
     var type: PoiType
     var poiCategory: PoiCategory?
-    var coords: (Double, Double)
+    var coords: (latitude: Double, longitude: Double)
     var name:String
     var description: String
     var hideIqonWhenBigZoom = false

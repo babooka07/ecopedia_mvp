@@ -512,9 +512,15 @@
                                     <constraint firstAttribute="height" constant="180" id="YEs-kZ-MG2"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="De7-LV-59W">
-                                <rect key="frame" x="151" y="29" width="73.5" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="De7-LV-59W">
+                                <rect key="frame" x="150.5" y="29" width="74.5" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="distanse" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dl-en-ftI">
+                                <rect key="frame" x="16" y="570" width="343" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -524,20 +530,23 @@
                             <constraint firstItem="oUz-8D-GBQ" firstAttribute="centerY" secondItem="Rft-4y-RcT" secondAttribute="centerY" id="Bz3-Mr-Nzg"/>
                             <constraint firstItem="oUz-8D-GBQ" firstAttribute="centerX" secondItem="Rft-4y-RcT" secondAttribute="centerX" id="OKi-Lf-lAU"/>
                             <constraint firstItem="skT-dd-yN4" firstAttribute="leading" secondItem="Rft-4y-RcT" secondAttribute="leading" id="S3I-Ye-7kQ"/>
+                            <constraint firstItem="Rft-4y-RcT" firstAttribute="bottom" secondItem="4dl-en-ftI" secondAttribute="bottom" constant="67" id="c8l-fm-nMH"/>
                             <constraint firstItem="skT-dd-yN4" firstAttribute="top" secondItem="Rft-4y-RcT" secondAttribute="top" id="hRI-zb-DQd"/>
                             <constraint firstItem="De7-LV-59W" firstAttribute="top" secondItem="Rft-4y-RcT" secondAttribute="top" constant="9" id="iL3-HK-dzR"/>
+                            <constraint firstItem="4dl-en-ftI" firstAttribute="centerX" secondItem="Rft-4y-RcT" secondAttribute="centerX" id="iQj-ha-JRI"/>
                             <constraint firstItem="De7-LV-59W" firstAttribute="centerX" secondItem="Rft-4y-RcT" secondAttribute="centerX" id="ieI-YM-HKf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rft-4y-RcT"/>
                     </view>
                     <connections>
+                        <outlet property="distanceLabel" destination="4dl-en-ftI" id="4mm-1Q-hga"/>
                         <outlet property="navigationArrowView" destination="oUz-8D-GBQ" id="ZIs-Rl-anc"/>
                         <outlet property="testLabel" destination="De7-LV-59W" id="j6R-q7-PLu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZt-65-npw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2146" y="325"/>
+            <point key="canvasLocation" x="2144.8000000000002" y="324.28785607196403"/>
         </scene>
     </scenes>
     <resources>

@@ -37,6 +37,7 @@ class MapViewController: UIViewController {
             mapScrollView.contentSize = mapView.frame.size
             mapView.viewIsOnScreen()
             mapScrollView.delegate = self
+            
         }
         
         if let info = Bundle.main.loadNibNamed("InfoMapView", owner: nil, options: nil)?.first as? InfoMapView {
@@ -50,6 +51,9 @@ class MapViewController: UIViewController {
         
         
         setMapToMyCurrentPosition(animated: false)
+        self.myPositionBtn.alpha = 0
+        isSetMyPositionBtnVisible = false
+
         
     }
     
@@ -199,7 +203,6 @@ extension MapViewController: UIScrollViewDelegate {
     }
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        print ("end aniation")
         isSetMyPositionBtnVisible = false
             UIView.animate(withDuration: Consts.serviceViewAnimationsDuration) {
                 self.myPositionBtn.alpha = 0

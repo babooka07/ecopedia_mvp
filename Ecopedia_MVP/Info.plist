@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>hkjhgkjhg</string>
+	<key>NSLocationUsageDescription</key>
+	<string>dsasdasd</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>dsasd</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Give me your location</string>
 	<key>NSCameraUsageDescription</key>

@@ -10,14 +10,19 @@ import UIKit
 import CoreLocation
 
 
-class NavigationToPointViewController: UIViewController, CLLocationManagerDelegate {
+class NavigationToPointViewController: UIViewController {
 
     
     @IBOutlet weak var navigationArrowView: UIImageView!
     
+    @IBOutlet weak var distanceLabel: UILabel!
     var currentItemModel = ItemModel()
     
-    var locationManager = CLLocationManager()
+    private var locationManager = CLLocationManager()
+    private var currentNorthDegreeseAngle = 0.0
+    private var currentLocation = CLLocation()
+    private var destinationLocation = CLLocation()
+    
     
     @IBOutlet weak var testLabel: UILabel!
     override func viewDidLoad() {
@@ -27,19 +32,50 @@ class NavigationToPointViewController: UIViewController, CLLocationManagerDelega
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        testLabel.text = currentItemModel.name
         
+        testLabel.text = currentItemModel.name
+        destinationLocation = CLLocation(latitude: currentItemModel.coords.latitude, longitude: currentItemModel.coords.longitude)
+        
+        locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
+        locationManager.distanceFilter = 0
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
+
+        
+    }
+    private func updateDistance () {
+        distanceLabel.text = "Distance: \(Int(currentLocation.distance(from: destinationLocation))) m"
+    }
+    
+    private func setDirection() {
+        let direction = (getBearingBetweenTwoPoints() - currentNorthDegreeseAngle) * .pi/180
+        UIView.animate(withDuration: 0.5) {
+            self.navigationArrowView.transform = CGAffineTransform(rotationAngle: CGFloat(direction))
+        }
         
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+    
+    private func degreesToRadians(degrees: Double) -> Double { return degrees * .pi / 180.0 }
+    private  func radiansToDegrees(radians: Double) -> Double { return radians * 180.0 / .pi }
+    
+    private  func getBearingBetweenTwoPoints() -> Double {
         
-        let degrees = 360 - newHeading.magneticHeading
-        let radians = CGFloat(degrees * Double.pi / 180)
+        let lat1 = degreesToRadians(degrees: currentLocation.coordinate.latitude)
+        let lon1 = degreesToRadians(degrees: currentLocation.coordinate.longitude)
         
-        navigationArrowView.transform = CGAffineTransform(rotationAngle: radians)
+        let lat2 = degreesToRadians(degrees: destinationLocation.coordinate.latitude)
+        let lon2 = degreesToRadians(degrees: destinationLocation.coordinate.longitude)
+        
+        let dLon = lon2 - lon1
+        
+        let y = sin(dLon) * cos(lat2)
+        let x = cos(lat1) * sin(lat2) - sin(lat1) * cos(lat2) * cos(dLon)
+        let radiansBearing = atan2(y, x)
+        
+        return radiansToDegrees(radians: radiansBearing)
     }
     
     
@@ -48,3 +84,22 @@ class NavigationToPointViewController: UIViewController, CLLocationManagerDelega
     }
     
 }
+
+extension NavigationToPointViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        
+        currentNorthDegreeseAngle = newHeading.trueHeading
+        updateDistance()
+        //MARK: TODO сделать безопасным
+        setDirection()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else {return}
+        currentLocation = location
+//     print(location.coordinate.latitude, location.coordinate.longitude)
+    }
+    
+}
+
+

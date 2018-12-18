@@ -49,13 +49,13 @@ class DataBase {
         arrOfItemModels.append(item0)
 //
     
-    let item1 = ItemModel(tag: 1, type: .animal, coords: (10,10), name: "Lion", poiCategory: nil, description: "Лев, царь зверей", hideIqonWhenBigZoom: true, imageForListName: "lion-150x150", audioSlideResourceName: "Lion", animalURL: "https://en.wikipedia.org/wiki/Lion" )
+    let item1 = ItemModel(tag: 1, type: .animal, coords: (50.024066, 36.339375), name: "Lion", poiCategory: nil, description: "Лев, царь зверей", hideIqonWhenBigZoom: true, imageForListName: "lion-150x150", audioSlideResourceName: "Lion", animalURL: "https://en.wikipedia.org/wiki/Lion" )
         arrOfItemModels.append(item1)
         
-    let item2 = ItemModel(tag: 2, type: .animal, coords: (20,20), name: "Camel", poiCategory: nil, description: "Верблюд он и в африке верблюд", hideIqonWhenBigZoom: true, imageForListName: "camel-150x150", audioSlideResourceName: "Camel", animalURL: "https://ru.wikipedia.org/wiki/Верблюды")
+    let item2 = ItemModel(tag: 2, type: .animal, coords: (50.020127,36.343971), name: "Camel", poiCategory: nil, description: "Верблюд он и в африке верблюд", hideIqonWhenBigZoom: true, imageForListName: "camel-150x150", audioSlideResourceName: "Camel", animalURL: "https://ru.wikipedia.org/wiki/Верблюды")
         arrOfItemModels.append(item2)
         
-    let item3 = ItemModel(tag: 3, type: .animal, coords: (30,30), name: "Rabbit",  poiCategory: nil, description: "Кролег он и в африке кролег", hideIqonWhenBigZoom: true, imageForListName: "rabbit-150x150", audioSlideResourceName: "", animalURL: "")
+    let item3 = ItemModel(tag: 3, type: .animal, coords: (50.019964,36.344373), name: "Rabbit",  poiCategory: nil, description: "Кролег он и в африке кролег", hideIqonWhenBigZoom: true, imageForListName: "rabbit-150x150", audioSlideResourceName: "", animalURL: "")
         arrOfItemModels.append(item3)
         
         let item4 = ItemModel(tag: 4, type: .pointOfInterest, coords: (40,40), name: "Theater", poiCategory: .actions, description: "Открытый летний театр", hideIqonWhenBigZoom: true, imageForListName: "", audioSlideResourceName: "", animalURL: "")
