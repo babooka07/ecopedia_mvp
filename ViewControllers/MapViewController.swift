@@ -24,6 +24,9 @@ class MapViewController: UIViewController {
     private var isSetDefZoomScaleBtnVisible = false
     private var isSetMyPositionBtnVisible = false
     
+    private var currentMapWidth:CGFloat = 0
+    private var currentMapHeidth:CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,9 +38,11 @@ class MapViewController: UIViewController {
             mapView.frame.origin = CGPoint.zero
             mapScrollView.addSubview(mapView)
             mapScrollView.contentSize = mapView.frame.size
+            currentMapWidth = mapView.frame.width
+            currentMapHeidth = mapView.frame.height
             mapView.viewIsOnScreen()
             mapScrollView.delegate = self
-            
+//            setCorrectScrollViewPositionAndSize()
         }
         
         if let info = Bundle.main.loadNibNamed("InfoMapView", owner: nil, options: nil)?.first as? InfoMapView {
@@ -57,12 +62,6 @@ class MapViewController: UIViewController {
         
     }
     
-    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        setMapToMyCurrentPosition(animated: true)
-//        print("self.view" ,self.view.frame.width)
-//        print("UIScreen",UIScreen.main.bounds.width)
-        
-    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         (UIApplication.shared.delegate as! AppDelegate).restrictRotation = .all
@@ -71,8 +70,13 @@ class MapViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
         (UIApplication.shared.delegate as! AppDelegate).restrictRotation = .portrait
-
+        
     }
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        setMapToMyCurrentPosition(animated: true)
+    }
+    
     
     private func setMapToMyCurrentPosition(animated: Bool) {
 //
@@ -81,6 +85,11 @@ class MapViewController: UIViewController {
 
         mapScrollView.setContentOffset(CGPoint(x: myCurrentX, y: myCurrentY), animated: animated)
         
+    }
+    
+    private func setCorrectScrollViewPositionAndSize() {
+          mapView.frame = CGRect(x: 0, y: 0, width: (currentMapWidth * mapScrollView.zoomScale), height: (currentMapHeidth * mapScrollView.zoomScale))
+//        print(mapScrollView.contentOffset)
     }
     
     
@@ -92,19 +101,35 @@ class MapViewController: UIViewController {
         }
     }
     
-    
     @IBAction func myPosotionBtnDidTap(_ sender: Any) {
         setMapToMyCurrentPosition(animated: true)
     }
-  
-
 }
 
 extension MapViewController: EcoparkMapViewDelegate {
     func itemDidTap(_ sender: Any) {
         currentItemModel = DataBase.shared.getItemModelBy(tag: (sender as! UIButton).tag)
         
-        infoView.nameLabel.text = currentItemModel.name
+        let alert = UIAlertController(title: currentItemModel.name, message: currentItemModel.description, preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Отменить", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        
+        let showDirectionAction = UIAlertAction(title: "Направление", style: .default) { (alrt) in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "NavigationToPointViewControllerIdentifier") as! NavigationToPointViewController
+            controller.currentItemModel = self.currentItemModel
+            self.present(controller, animated: true, completion: nil)
+            
+            self.currentItemModel = ItemModel()
+        }
+        
+        alert.addAction(showDirectionAction)
+        
+        present(alert, animated: true, completion: nil)
+        
+//кастомный алерт
+      /*  infoView.nameLabel.text = currentItemModel.name
         infoView.descriptionLabel.text = currentItemModel.description
         infoView.frame = self.view.frame
         self.view.addSubview(infoView)
@@ -124,54 +149,37 @@ extension MapViewController: EcoparkMapViewDelegate {
             if isFinished {
                 self.infoView.alpha = 1
             }
-        }
+        } */
     }
-}
+ 
+ }
 
 extension MapViewController: InfoMapViewDelegate {
     func infoMapCancelDidTap() {
-        UIView.animate(withDuration: Consts.serviceViewAnimationsDuration, animations: {
-            self.infoView.alpha = 0
-        }) { (isFinished) in
-            if isFinished {
-                self.infoView.alpha = 0
-                self.infoView.removeFromSuperview()
-                self.currentItemModel = ItemModel()
-            }
-        }
+//        UIView.animate(withDuration: Consts.serviceViewAnimationsDuration, animations: {
+//            self.infoView.alpha = 0
+//        }) { (isFinished) in
+//            if isFinished {
+//                self.infoView.alpha = 0
+//                self.infoView.removeFromSuperview()
+//                self.currentItemModel = ItemModel()
+//            }
+//        }
         
     }
     
     func infoMapSgowDirectDidTap() {
-        infoView.alpha = 0
-        infoView.removeFromSuperview()
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "NavigationToPointViewControllerIdentifier") as! NavigationToPointViewController
-        controller.currentItemModel = currentItemModel
-        self.present(controller, animated: true, completion: nil)
-        
-        currentItemModel = ItemModel()
+//        infoView.alpha = 0
+//        infoView.removeFromSuperview()
+//
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let controller = storyboard.instantiateViewController(withIdentifier: "NavigationToPointViewControllerIdentifier") as! NavigationToPointViewController
+//        controller.currentItemModel = currentItemModel
+//        self.present(controller, animated: true, completion: nil)
+//
+//        currentItemModel = ItemModel()
     }
     
-    func checkAndCorrectMapPosition () {
-//        print(mapScrollView.contentOffset.x, mapScrollView.contentOffset.y )
-        if mapScrollView.contentOffset.x <= 0 {
-            mapScrollView.contentOffset.x = 0
-        }
-        if mapScrollView.contentOffset.y <= 0 {
-            mapScrollView.contentOffset.y = 0
-        }
-//            print(mapView.frame.width)
-//        if mapScrollView.contentOffset.x >= mapView.frame.width - self.view.frame.width {
-//           mapScrollView.contentOffset.x = mapView.frame.width - self.view.frame.width
-//        }
-//        if mapScrollView.contentOffset.y >= mapView.frame.height - self.view.frame.height
-//        {
-//            mapScrollView.contentOffset.y = mapView.frame.height - self.view.frame.height
-//        }
-        
-    }
 }
 
 extension MapViewController: UIScrollViewDelegate {
@@ -186,20 +194,25 @@ extension MapViewController: UIScrollViewDelegate {
 
         }
         
+      setCorrectScrollViewPositionAndSize()
+
+
     }
+    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.mapView
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        checkAndCorrectMapPosition()
         if !isSetMyPositionBtnVisible {
             isSetMyPositionBtnVisible = true
             UIView.animate(withDuration: Consts.serviceViewAnimationsDuration) {
                 self.myPositionBtn.alpha = 1
             }
         }
-//
+
+       setCorrectScrollViewPositionAndSize()
+
     }
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
@@ -207,6 +220,7 @@ extension MapViewController: UIScrollViewDelegate {
             UIView.animate(withDuration: Consts.serviceViewAnimationsDuration) {
                 self.myPositionBtn.alpha = 0
             }
+        setCorrectScrollViewPositionAndSize()
     }
     
     

@@ -161,8 +161,8 @@
 		F1E8D55E21B992C2008B3A26 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F15DF90E21BEE60200CB7534 /* AnimalSlideViewController.swift */,
 				F1170A1B21BD97CD00650FEA /* NavigationToPointViewController.swift */,
+				F15DF90E21BEE60200CB7534 /* AnimalSlideViewController.swift */,
 				F151933E21BB376400B186E8 /* AnimalListViewController.swift */,
 				F1E8D55621B886C3008B3A26 /* MapViewController.swift */,
 				F1E8D55C21B99204008B3A26 /* MainMenuViewController.swift */,

@@ -23,7 +23,7 @@ class EcoparkMapView: UIView {
     
     weak var delegate: EcoparkMapViewDelegate?
     
-    var myCurrentPos = CGPoint(x: 300, y: 300)
+    var myCurrentPos = CGPoint(x: 800, y: 500)
     
     func viewIsOnScreen () {
         updateMyCurrentPosView()

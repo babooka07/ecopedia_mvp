@@ -43,37 +43,81 @@ class NavigationToPointViewController: UIViewController {
         testLabel.text = currentItemModel.name
         destinationLocation = CLLocation(latitude: currentItemModel.coords.latitude, longitude: currentItemModel.coords.longitude)
         
-        locationManager.requestAlwaysAuthorization()
-        locationManager.delegate = self
-        locationManager.distanceFilter = 0
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-        locationManager.startUpdatingHeading()
-        
-        noGPSdataView.alpha = 0
-        
         UIApplication.shared.isIdleTimerDisabled = true
         
-        switch CLLocationManager.authorizationStatus() {
-        case .authorizedAlways:
-            break
-        case .authorizedWhenInUse:
-            break
-        default:
-            break
-        }
-
+        gpsSignalIndicator_1.alpha = 0
+        gpsSignalIndicator_2.alpha = 0
+        gpsSignalIndicator_3.alpha = 0
+        gpsSignalIndicator_4.alpha = 0
         
+        if CLLocationManager.locationServicesEnabled(), CLLocationManager.headingAvailable() {
+            
+            locationManager.requestAlwaysAuthorization()
+            locationManager.delegate = self
+            determinePermissions()
+           
+        } else {
+            proceedGpsServiceUnavailableAlert()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         UIApplication.shared.isIdleTimerDisabled = false
+    }
+    
+    private func determinePermissions() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways:
+            initializeNavigation()
+        case .authorizedWhenInUse:
+            initializeNavigation()
+//        case .denied:
+//            print("denied")
+//        case .notDetermined:
+//            print("notDetermined")
+//        case .restricted:
+//            print("restricted")
+            
+        default:
+            proceedNoGpsAccess()
+            
+        }
+    }
+    
+    private func initializeNavigation() {
+        
+        locationManager.distanceFilter = 0
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        locationManager.startUpdatingHeading()
+        noGPSdataView.alpha = 0
 
     }
     
+    private func proceedNoGpsAccess() {
+        let alert = UIAlertController(title: "NO GPS DATA", message: "Для пользования сервисом, пожалуйста, разрешите приложению использовать вашу геопозицию", preferredStyle: .alert)
+        let settingsAction = UIAlertAction(title: "Настройки", style: .default) { (alrt) in
+            //код, открывающий настройки
+        }
+        alert.addAction(settingsAction)
+        
+        let okAction = UIAlertAction(title: "ok", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func proceedGpsServiceUnavailableAlert(){
+        let alert = UIAlertController(title: "NO GPS", message: "Ваше устройство не поддерживает этот сервис", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "ok", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    
     private func updateDistance () {
         distanceLabel.text = "Distance: \(Int(currentLocation.distance(from: destinationLocation))) m"
-        
     }
     
     private func updateAccuracy() {
@@ -174,7 +218,6 @@ extension NavigationToPointViewController: CLLocationManagerDelegate {
         currentNorthDegreeseAngle = newHeading.trueHeading
         updateDistance()
         updateAccuracy()
-        //MARK: TODO сделать безопасным
         setDirection()
     }
     
@@ -183,12 +226,13 @@ extension NavigationToPointViewController: CLLocationManagerDelegate {
         currentLocation = location
     }
     
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        determinePermissions()
+    }
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         if let error = error as? CLError, error.code == .denied {
             switch error.code {
-                
-                
-                
             default:
                 break
             }

@@ -50,15 +50,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    
+    //MARK: Navigation
+    
+    func initializeNavigationWithContoller(navigationDelegate: CLLocationManagerDelegate) {
+        //выполняется после проверок - имеется ли жыпысы в телефоне, есть ли разрешение
+        let locationManager = CLLocationManager()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.delegate = navigationDelegate
+        locationManager.distanceFilter = 0
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        locationManager.startUpdatingHeading()
+
+    }
+    
+    func deinitializeNavigation() {
+        
+    }
+    
 
 
-}
-
-extension AppDelegate: CLLocationManagerDelegate {
-    
-    
-    
-    
-    
 }
 
